@@ -17,7 +17,7 @@ export default function Weather() {
     });
   }
 
-  if (ready) {
+  if (weatherData.ready) {
     return (
       <div className="Weather">
         <div className="container">
