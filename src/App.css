@@ -4,12 +4,16 @@
   height: 100vh;
   color: #3c3c3c;
   padding: 50px 20px;
-  text-align: center;
 }
 .App h1 {
+  text-align: center;
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
   color: #126358;
+}
+.App footer {
+  text-align: center;
+  font-size: 12px;
 }
 .App footer a {
   color: #2bb1a4;

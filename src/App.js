@@ -24,7 +24,7 @@ export default function App() {
               target="_blank"
               rel="noreferrer"
             >
-              github
+              GitHub
             </a>{" "}
             and hosted on{" "}
             <a
@@ -32,7 +32,7 @@ export default function App() {
               target="_blank"
               rel="noreferrer"
             >
-              netlify
+              Netlify
             </a>
           </p>
         </footer>
