@@ -5,6 +5,7 @@ import WeatherDisplay from "./WeatherDisplay";
 
 export default function Weather({ defaultCity }) {
   const [data, setData] = useState({ ready: false });
+  const [city, setCity] = useState(defaultCity);
 
   function handleResponse(response) {
     setData({
@@ -19,16 +20,41 @@ export default function Weather({ defaultCity }) {
     });
   }
 
+  function search() {
+    const apiKey = "bc2cd97eaa209e7d22d8f3c84081655f";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(handleResponse);
+  }
+
+  function handleInput(event) {
+    setCity(event.target.value);
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    search();
+  }
+
   if (data.ready) {
     return (
       <div className="Weather">
+        <form
+          className="mb-5 row justify-content-between"
+          onSubmit={handleSubmit}
+        >
+          <input
+            className="input-text "
+            type="text"
+            placeholder="Enter a city"
+            onChange={handleInput}
+          />
+          <input className="btn w-25 input-btn" type="submit" value="Search" />
+        </form>
         <WeatherDisplay weatherData={data} />
       </div>
     );
   } else {
-    const apiKey = "bc2cd97eaa209e7d22d8f3c84081655f";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${defaultCity}&appid=${apiKey}&units=metric`;
-    axios.get(apiUrl).then(handleResponse);
+    search();
     return "Loading...";
   }
 }

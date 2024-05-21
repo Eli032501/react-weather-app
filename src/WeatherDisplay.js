@@ -5,15 +5,6 @@ export default function WeatherDisplay({ weatherData }) {
   return (
     <div className="WeatherDisplay">
       <div className="container">
-        <form className="mb-5 row justify-content-between">
-          <input
-            className="input-text "
-            type="text"
-            placeholder="Enter a city"
-          />
-          <input className="btn w-25 input-btn" type="submit" value="Search" />
-        </form>
-
         <div className="d-md-flex justify-content-between">
           <div className="d-flex justify-content-start">
             <div className="div-current-temp d-flex justify-content-start">
