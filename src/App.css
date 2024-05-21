@@ -1,0 +1,17 @@
+.App {
+  font-family: "Open Sans", sans-serif;
+  background-color: #cbf3f0;
+  height: 100vh;
+  color: #3c3c3c;
+  padding: 50px 20px;
+  text-align: center;
+}
+.App h1 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  color: #126358;
+}
+.App footer a {
+  color: #2bb1a4;
+  text-decoration: none;
+}

@@ -1,0 +1,18 @@
+* {
+  box-sizing: border-box;
+}
+.Weather {
+  background-color: #fff;
+  margin: 20px auto;
+  padding: 30px;
+  border-radius: 10px;
+}
+.Weather .input-text {
+  border-radius: 6px;
+  width: 73%;
+  border: solid 1.3px #126358;
+}
+.Weather .input-btn {
+  background-color: #126358;
+  color: #fff;
+}
