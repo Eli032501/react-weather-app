@@ -16,6 +16,7 @@
 .WeatherForecast .forecast-line p.temp-values {
   font-size: 14px;
   margin-top: 2px;
+  margin-bottom: 0;
   text-transform: lowercase;
 }
 .WeatherForecast .forecast-line p span.min-temp {
