@@ -1,11 +1,12 @@
 import React from "react";
 import FormatDate from "./FormatDate";
+import WeatherIcon from "./WeatherIcon";
 
 export default function WeatherDisplay({ weatherData }) {
   return (
     <div className="WeatherDisplay">
       <div className="container">
-        <div className="d-md-flex justify-content-between">
+        <div className="d-md-flex justify-content-between align-items-center">
           <div className="d-flex justify-content-start">
             <div className="div-current-temp d-flex justify-content-start">
               <h2 className="temp-value">
@@ -16,7 +17,7 @@ export default function WeatherDisplay({ weatherData }) {
               </div>
             </div>
             <figure className="fig-icon-sky">
-              <img src={weatherData.icon} alt={weatherData.sky} />
+              <WeatherIcon code={weatherData.icon} />
             </figure>
           </div>
           <div className="city-info">
