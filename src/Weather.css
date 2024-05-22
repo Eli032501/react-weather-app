@@ -30,6 +30,13 @@
   margin-left: 4px;
   font-size: 14px;
 }
+.Weather div.temp-units span {
+  font-weight: 600;
+  color: #126358;
+}
+.Weather div.temp-units a {
+  color: #f46936;
+}
 .Weather figure.fig-icon-sky {
   margin-bottom: 0;
   margin-left: 20px;

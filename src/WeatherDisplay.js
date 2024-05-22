@@ -1,6 +1,7 @@
 import React from "react";
 import FormatDate from "./FormatDate";
 import WeatherIcon from "./WeatherIcon";
+import WeatherTemperature from "./WeatherTemperature";
 
 export default function WeatherDisplay({ weatherData }) {
   return (
@@ -8,14 +9,8 @@ export default function WeatherDisplay({ weatherData }) {
       <div className="container">
         <div className="d-md-flex justify-content-between align-items-center">
           <div className="d-flex justify-content-start">
-            <div className="div-current-temp d-flex justify-content-start">
-              <h2 className="temp-value">
-                {Math.round(weatherData.temperature)}
-              </h2>
-              <div className="temp-units float-start">
-                <span>ºC</span> | <span>ºF</span>
-              </div>
-            </div>
+            <WeatherTemperature temp={weatherData.temperature} />
+
             <figure className="fig-icon-sky">
               <WeatherIcon code={weatherData.icon} />
             </figure>
