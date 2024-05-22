@@ -20,7 +20,7 @@ export default function WeatherTemperature({ temp }) {
         <h2 className="temp-value">{Math.round(temp)}</h2>
         <div className="temp-units float-start">
           <span>ºC </span>|
-          <a href="#" onClick={showFahrenheit}>
+          <a href="/" onClick={showFahrenheit}>
             ºF
           </a>
         </div>
@@ -31,7 +31,7 @@ export default function WeatherTemperature({ temp }) {
       <div className="div-current-temp d-flex justify-content-start">
         <h2 className="temp-value">{Math.round(convertFahrenheit())}</h2>
         <div className="temp-units float-start">
-          <a href="#" onClick={showCelsius}>
+          <a href="/" onClick={showCelsius}>
             ºC
           </a>{" "}
           |<span> ºF</span>
