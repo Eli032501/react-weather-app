@@ -20,5 +20,5 @@
 }
 .WeatherForecast .forecast-line p span.min-temp {
   padding-left: 4px;
-  color: #1d8779;
+  opacity: 0.7;
 }
