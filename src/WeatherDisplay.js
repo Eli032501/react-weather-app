@@ -12,7 +12,7 @@ export default function WeatherDisplay({ weatherData }) {
             <WeatherTemperature temp={weatherData.temperature} />
 
             <figure className="fig-icon-sky">
-              <WeatherIcon code={weatherData.icon} />
+              <WeatherIcon code={weatherData.icon} size={66} />
             </figure>
           </div>
           <div className="city-info">
