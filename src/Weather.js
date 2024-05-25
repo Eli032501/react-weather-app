@@ -12,6 +12,7 @@ export default function Weather({ defaultCity }) {
     setData({
       ready: true,
       city: response.data.name,
+      coordinates: response.data.coord,
       date: new Date(response.data.dt * 1000),
       temperature: response.data.main.temp,
       wind: response.data.wind.speed,
@@ -52,7 +53,7 @@ export default function Weather({ defaultCity }) {
           <input className="btn w-25 input-btn" type="submit" value="Search" />
         </form>
         <WeatherDisplay weatherData={data} />
-        <WeatherForecast forecatData={data} />
+        <WeatherForecast coordinates={data.coordinates} />
       </div>
     );
   } else {

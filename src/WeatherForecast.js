@@ -1,51 +1,40 @@
-import React from "react";
-import WeatherIcon from "./WeatherIcon";
+import React, { useState } from "react";
+import WeatherForecastDay from "./WeatherForecastDay";
 import "./WeatherForecast.css";
+import axios from "axios";
 
-export default function WeatherForecast({ forecatData }) {
-  return (
-    <div className="WeatherForecast container ">
-      <div className="forecast-line row ">
-        <div className="col forecast-element ">
-          <WeatherIcon code="01d" size={30} />
-          <h5 className="weekday-forecast">Mon</h5>
-          <p className="temp-values">
-            18ºc <span className="min-temp">11ºC</span>
-          </p>
-        </div>
-        <div className="col forecast-element">
-          <WeatherIcon code="01d" size={30} />
+export default function WeatherForecast({ coordinates }) {
+  const [loaded, setLoaded] = useState(false);
+  const [forecast, setForecast] = useState(null);
 
-          <h5 className="weekday-forecast">Mon</h5>
-          <p className="temp-values">
-            18ºc <span className="min-temp">11ºC</span>
-          </p>
-        </div>
-        <div className="col forecast-element">
-          <WeatherIcon code="01d" size={30} />
+  function handleRespnse(response) {
+    setForecast(response.data.daily);
+    setLoaded(true);
+  }
 
-          <h5 className="weekday-forecast">Mon</h5>
-          <p className="temp-values">
-            18ºc <span className="min-temp">11ºC</span>
-          </p>
-        </div>
-        <div className="col d-none d-sm-flex forecast-element ">
-          <WeatherIcon code="01d" size={30} />
-
-          <h5 className="weekday-forecast">Mon</h5>
-          <p className="temp-values">
-            18ºc <span className="min-temp">11ºC</span>
-          </p>
-        </div>
-        <div className="col d-none d-md-flex forecast-element ">
-          <WeatherIcon code="01d" size={30} />
-
-          <h5 className="weekday-forecast">Mon</h5>
-          <p className="temp-values">
-            18ºc <span className="min-temp">11ºC</span>
-          </p>
+  if (loaded) {
+    return (
+      <div className="WeatherForecast container ">
+        <div className="forecast-line row ">
+          <div className="col  ">
+            <WeatherForecastDay forecastData={forecast[1]} />
+          </div>
+          <div className="col  ">
+            <WeatherForecastDay forecastData={forecast[2]} />
+          </div>
+          <div className="col  ">
+            <WeatherForecastDay forecastData={forecast[3]} />
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  } else {
+    let latitude = coordinates.lat;
+    let longitude = coordinates.lon;
+    let apiKey = "bc2cd97eaa209e7d22d8f3c84081655f";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(handleRespnse);
+
+    return "Loading...";
+  }
 }
