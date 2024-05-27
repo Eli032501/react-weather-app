@@ -15,7 +15,7 @@ export default function WeatherForecastDay({ forecastData }) {
       <WeatherIcon code={forecastData.weather[0].icon} size={30} />
       <h5 className="weekday-forecast">{weekDay()}</h5>
       <p className="temp-values">
-        {Math.round(forecastData.temp.max)}ºc{" "}
+        {Math.round(forecastData.temp.max)}ºC{" "}
         <span className="min-temp">{Math.round(forecastData.temp.min)}ºC</span>
       </p>
     </div>
