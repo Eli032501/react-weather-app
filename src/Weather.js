@@ -50,7 +50,7 @@ export default function Weather({ defaultCity }) {
             placeholder="Enter a city"
             onChange={handleInput}
           />
-          <input className="btn w-25 input-btn" type="submit" value="Search" />
+          <input className="btn input-btn" type="submit" value="Search" />
         </form>
         <WeatherDisplay weatherData={data} />
         <WeatherForecast coordinates={data.coordinates} />

@@ -16,6 +16,7 @@
   border: solid 1.4px #f46936;
 }
 .Weather .input-btn {
+  width: 25%;
   background-color: #f46936;
   color: #fff;
 }
@@ -59,4 +60,31 @@
 .Weather .city-info p span {
   margin-right: 5px;
   color: #1d8779;
+}
+@media (max-width: 445px) {
+  .Weather {
+    margin: 20px auto;
+    padding: 30px;
+  }
+  .Weather h2.temp-value {
+    font-size: 46px;
+    line-height: 36px;
+  }
+  .Weather .input-text {
+    width: 64%;
+    font-size: 12px;
+  }
+  .Weather .input-btn {
+    width: 34%;
+    font-size: 12px;
+    padding: 4px;
+  }
+  .Weather .city-info h3 {
+    font-size: 26px;
+  }
+  .Weather .city-info h4,
+  .Weather .city-info p,
+  .Weather div.temp-units {
+    font-size: 12px;
+  }
 }
